@@ -25,13 +25,13 @@ Deep learning–based analysis of gigapixel whole slide images (WSIs) in computa
 
 You can easily download and install the Lin-MIL model via:
 
-```[bash]
+```bash
 pip install lin_mil
 ```
 
 Or you can install the package in editable mode via:
 
-```[bash]
+```bash
 git clone https://github.com/charlotterchtr/Lin-MIL.git
 cd Lin-MIL
 pip install -e .
@@ -43,7 +43,7 @@ For whole slide image segmentation and tesselation into patches, we used the [CL
 
 ### Usage
 
-```[python]
+```python
 import torch
 from lin_mil import Lin_MIL, Config
 
@@ -66,9 +66,9 @@ config.latent_dim = 512
 config.transformer_depth = 4
 config.dropout = 0.0
 config.emb_dropout = 0.1
-config.act = ReLU           # options: ReLU, GeLU, LeakyReLU, ELU, TanH, Softplus
-config.attention =  linear
-config.pooling = cls        # options: cls, mean
+config.act = 'ReLU'           # options: ReLU, GeLU, LeakyReLU, ELU, TanH, Softplus
+config.attention =  'linear'
+config.pooling = 'cls'        # options: cls, mean
 config.ablation = False
 
 # init
@@ -85,11 +85,11 @@ probs = torch.softmax(logits, dim=1)
 
 You can also compare the performance of different attention mechanisms. Please note that dilated attention requires flash-attn and xformers to be installed.
 
-```[python]
+```python
 
 # ablation on attention mechanism
 config.ablation = True
-config.attention = 'nystrom' # options: 'nystrom', 'softmax', 'dilated'
+config.attention = 'nystrom' # options: 'linear', 'nystrom', 'softmax', 'dilated'
 
 model_ablation = Lin_MIL(num_classes=num_classes, input_dim=patch_dim, config=config)
 

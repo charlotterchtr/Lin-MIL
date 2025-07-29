@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="lin_mil",
-    version="0.1.0",
+    version="1.0.1",
     author="Charlotte Richter",
     author_email="richter_charlotte@t-online.de",
     description="Lin-MIL: Linear Attention for Whole Slide Image Analysis",
