@@ -96,5 +96,3 @@ model_ablation = Lin_MIL(num_classes=num_classes, input_dim=patch_dim, config=co
 logits_ablation, attn_ablation = model_ablation(wsi)
 probs_ablation = torch.softmax(logits_ablation, dim=1)
 ```
-
-
