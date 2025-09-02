@@ -1,6 +1,6 @@
 # Lin-MIL
 
-[OpenReview](https://openreview.net/forum?id=Cbzq1wDu2v)
+[OpenReview](https://openreview.net/pdf/000e6db9f10bc35d1055f60b10655aad7ad37b65.pdf)
 
 Code repository for paper **"Linear Attention for Whole Slide Image Analysis"** published at **MICCAI 2025** *COMPAYL workshop*.
 
@@ -95,4 +95,18 @@ model_ablation = Lin_MIL(num_classes=num_classes, input_dim=patch_dim, config=co
 
 logits_ablation, attn_ablation = model_ablation(wsi)
 probs_ablation = torch.softmax(logits_ablation, dim=1)
+```
+
+### Citation
+
+If you find our work useful, please cite our paper:
+
+```
+@inproceedings{richter_reisenbuechler_2025_linear,
+  title={Linear Attention-based Multiple Instance Learning for Computational Pathology},
+  author={Richter, Charlotte and Reisenb{\"u}chler, Daniel and Schaadt, Nadine S. and Feuerhake, Friedrich and Merhof, Dorit},
+  booktitle={Proceedings of the COMPAYL Workshop on Computational Pathology at the 28th International Conference on Medical Image Computing and Computer Assisted Intervention (COMPAYL@MICCAI)},
+  year={2025},
+  organization={Springer},
+}
 ```
